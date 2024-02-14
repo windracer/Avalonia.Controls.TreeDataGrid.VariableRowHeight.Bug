@@ -2,7 +2,6 @@
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Media;
 using Avalonia.Platform;
-using Avalonia.TreeDataGrid.VariableRowsBug.Models;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
