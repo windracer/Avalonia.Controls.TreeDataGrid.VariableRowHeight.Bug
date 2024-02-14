@@ -1,0 +1,44 @@
+<Window x:Class="Avalonia.TreeDataGrid.VariableRowsBug.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Avalonia.TreeDataGrid.VariableRowsBug.ViewModels"
+    Title="AvaloniaUI TreeDataGrid Variable RowHeight Bug Example"
+    Width="560"
+    d:DesignHeight="450"
+    d:DesignWidth="560"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    mc:Ignorable="d">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>Auto *</Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>* Auto *</Grid.ColumnDefinitions>
+        <TextBlock
+            Margin="5"
+            FontWeight="Bold"
+            Text="TextWrapping=NoWrap" />
+        <TreeDataGrid
+            Grid.Row="1"
+            Grid.Column="0"
+            Source="{Binding TreeNoWrap}" />
+        <GridSplitter
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Width="5" />
+        <TextBlock
+            Grid.Column="2"
+            Margin="5"
+            FontWeight="Bold"
+            Text="TextWrapping=Wrap" />
+        <TreeDataGrid
+            Grid.Row="1"
+            Grid.Column="2"
+            Source="{Binding TreeWrap}" />
+    </Grid>
+</Window>
